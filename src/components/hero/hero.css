@@ -1,0 +1,33 @@
+.hero_wrapper {
+    height: 80vh;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 1fr;
+    grid-template-areas: "hero_text hero_image";
+}
+
+.hero_container {
+    grid-area: hero_text;
+    /* background: red; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.hero_title {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+.hero_title span {
+    color: var(--text-accent);
+}
+
+.hero_graphic_container {
+    grid-area: hero_image;
+    /* background-color: aqua; */
+}
