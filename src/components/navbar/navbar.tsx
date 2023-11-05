@@ -113,7 +113,7 @@ export default function Navbar() {
     }
 
     function gotoProjects() {
-        if(isInContact) {
+        if(isInContact || document.querySelector('.section-contact').style.transform === "translate(-50%, 0%) translate(0px, 15%)") {
              
             gsap.to(document.querySelectorAll('.contact_ct'), {
                 opacity: 0,
