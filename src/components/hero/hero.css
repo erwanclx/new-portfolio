@@ -1,4 +1,4 @@
-.hero_wrapper {
+/* .hero_wrapper {
     height: 80vh;
     width: 100%;
 
@@ -10,7 +10,6 @@
 
 .hero_container {
     grid-area: hero_text;
-    /* background: red; */
 
     display: flex;
     flex-direction: column;
@@ -29,5 +28,4 @@
 
 .hero_graphic_container {
     grid-area: hero_image;
-    /* background-color: aqua; */
-}
+} */

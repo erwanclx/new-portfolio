@@ -3,9 +3,11 @@
 :root {
   --background: #0e100f;
   --primary: #646cff;
+  --secondary : #fffce1;
+  --disabled : #7c7c6f;
   --hovered-primary: #8789ff;
   --text-primary: #fffce1;
-  --text-secondary: #a0a0a0;
+  --text-secondary: #7c7c6f;
   --text-accent: #646cff;
 
   --font-title: 'Montserrat', sans-serif;
@@ -25,6 +27,9 @@ body {
   font-weight: 300;
   font-size: 1.2rem;
   line-height: 1.5;
+
+  overflow-y: hidden;
+
 }
 
 #root {

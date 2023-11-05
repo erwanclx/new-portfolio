@@ -1,0 +1,47 @@
+:root {
+    --cursor-size : 50px;
+}
+
+html, body, * {
+    cursor: none !important;
+}
+
+.custom-cursor {
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    background-color: transparent; 
+    border-radius: 50%;
+    border: 1px solid var(--disabled);
+    top: calc(-1 * var(--cursor-size) / 2);
+    left: calc(-1 * var(--cursor-size) / 2);
+    position: absolute;
+    pointer-events: none; 
+    z-index: 9999; 
+}
+
+.custom-cursor.link {
+    background-color: var(--secondary);
+}
+
+.custom-cursor.link::before {
+    content: '';
+    background-image: url('/src/assets/arrow.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+/* If hover not availabl */
+@media (hover: none) {
+    .custom-cursor {
+      display: none !important;
+    }
+  }

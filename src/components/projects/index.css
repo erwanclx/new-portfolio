@@ -1,0 +1,116 @@
+.section-projects {
+    height: 100vh;
+    width: 100vw;
+    max-width: 1650px;
+    background-color: var(--secondary);
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    
+    transform: translate(-50%,100%);
+
+    border-radius: 70% 70% 0 0;
+}
+
+.pj_ct {
+    opacity: 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: start;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.section-projects-button-container {
+    position: absolute;
+    bottom: 20%;
+    width: 100%;
+    gap: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-projects-button {
+    height: 100px;
+    width: 400px;
+
+    border-radius: 50px;
+    border: 1px solid var(--primary);
+
+    font-size: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-projects-button:not(.ext) {
+    height: 100px;
+    width: 400px;
+
+    border-radius: 50px;
+    border: 1px solid var(--primary);
+    background-color: var(--primary);
+
+    font-size: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-projects-button a {
+    font-family: var(--font-title);
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.section-projects-button:not(.ext) a {
+    font-family: var(--font-title);
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.section-projects-button {
+
+    transition: background-color 0.3s ease;
+}
+
+.section-projects-button:hover {
+    background-color: var(--background);
+    border: 0px;
+}
+
+.section-projects-button:hover a {
+    color: var(--text-primary);
+}
+
+@media screen and (max-width: 1024px) {
+    .section-projects-button, #contact-btn {
+        height: 70px;
+        width: 220px;
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section-projects-button, #contact-btn {
+        height: 50px;
+        width: 200px;
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        margin-bottom: -50px;
+    }
+}
+

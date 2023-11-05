@@ -1,14 +1,19 @@
 
-import './App.css'
 import Navbar from './components/navbar/navbar'
-import Hero from './components/hero/hero'
+import HeroSec from './components/hero/heroSec'
+import Cursor from './animations/cursor/cursor'
+import Projects from './components/projects'
+import Contact from './components/contact/'
 
 function App() {
 
   return (
     <>
+      <Cursor />
       <Navbar />
-      <Hero />
+      <HeroSec />
+      <Projects />
+      <Contact />
     </>
   )
 }
