@@ -12,6 +12,9 @@
 
   --font-title: 'Montserrat', sans-serif;
   --font-body: 'Hind Madurai', sans-serif;
+
+  --max-width: 1650px;
+  --section-radius: 70% 70% 0 0;
 }
 
 * {

@@ -1,7 +1,7 @@
 .section-projects {
     height: 100vh;
     width: 100vw;
-    max-width: 1650px;
+    max-width: var(--max-width);
     background-color: var(--secondary);
 
     position: absolute;
@@ -9,8 +9,7 @@
     left: 50%;
     
     transform: translate(-50%,100%);
-
-    border-radius: 70% 70% 0 0;
+    border-radius: var(--section-radius);
 }
 
 .pj_ct {
@@ -103,6 +102,9 @@
 }
 
 @media screen and (max-width: 768px) {
+    .section-projects-button-container {
+        bottom: 30%;
+    }
     .section-projects-button, #contact-btn {
         height: 50px;
         width: 200px;
@@ -114,3 +116,10 @@
     }
 }
 
+@media screen and (max-height: 700px) {
+    .section-projects-button, #contact-btn {
+        height: 70px;
+        width: 220px;
+        font-size: 1.8rem;
+    }
+}

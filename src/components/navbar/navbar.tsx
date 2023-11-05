@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import gsap from 'gsap';
 import Magnetic from '../../animations/magnetic';
 
@@ -11,15 +11,18 @@ export default function Navbar() {
     const links = [
         {
             name: "Home",
-            url: "#home"
+            url: "#home",
+            action: () => gotoHome()
         },
         {
             name: "Projects",
-            url: "#projects"
+            url: "#projects",
+            action: () => gotoProjects()
         },
         {
             name: "Contact",
-            url: "#contact"
+            url: "#contact",
+            action: () => gotoContact()
         }
     ];
     
@@ -33,7 +36,6 @@ export default function Navbar() {
                 ease: 'power2.out',
                 fontSize: '1.3rem',
                 onComplete: function() {
-                    // Reset the scale after the animation
                     gsap.to(letter, { scale: 1, duration: 0 });
                 }
             });
@@ -53,33 +55,111 @@ export default function Navbar() {
         });
     }
 
-    // On load animation
-    React.useEffect(() => {
-        
+    
 
-    gsap.fromTo(
-        document.querySelectorAll('.letter'),
-        { 
-          y: 100,
-          opacity: 0
-        },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.05,
-          duration: 2,
-          ease: 'power4.out',
-        }
-      )
+    useEffect(() => {
+        gsap.fromTo(
+            document.querySelectorAll('.letter'),
+            { 
+              y: 100,
+              opacity: 0
+            },
+            {
+              y: 0,
+              opacity: 1,
+              stagger: 0.05,
+              duration: 2,
+              ease: 'power4.out',
+            }
+          );
+          
     }, []);
+
+    function gotoHome() {
+        gsap.to(document.querySelectorAll('.pj_ct'), {
+            opacity: 0,
+            duration: .5,
+            ease: "power1.inOut",
+            stagger: .1,
+            onComplete: function() {
+                gsap.to(document.querySelector('.section-projects'), {
+                    y: '100%',
+                    duration: 1,
+                    borderTopLeftRadius: "70%", 
+                    borderTopRightRadius: "70%", 
+                ease: "power1.inOut", 
+                });
+            }
+        })
+
+        gsap.to(document.querySelectorAll('.contact_ct'), {
+            opacity: 0,
+            duration: .5,
+            ease: "power1.inOut",
+            stagger: .1,
+            onComplete: function() {
+                gsap.to(document.querySelector('.section-contact'), {
+                    y: '100%',
+                    duration: 1,
+                    borderTopLeftRadius: "70%", 
+                    borderTopRightRadius: "70%",
+                ease: "power1.inOut", 
+                });
+            }
+        })
+    }
+
+    function gotoProjects() {
+        gsap.to(document.querySelector('.section-projects'), {
+            y: '15%',
+            duration: 1,
+            borderTopLeftRadius: "10px",
+        borderTopRightRadius: "10px", 
+        ease: "power1.inOut", 
+        onComplete: function() {
+            gsap.to(document.querySelectorAll('.pj_ct'), {
+                opacity: 1,
+                duration: .5,
+                ease: "power1.inOut",
+                stagger: .1,
+            })
+        }
+        });
+    } 
+
+    function gotoContact() {
+        gotoProjects();
+        setTimeout(() => {
+            gsap.to(document.querySelector('.section-contact'), {
+                y: '15%',
+                duration: 1,
+                borderTopLeftRadius: "0", 
+            borderTopRightRadius: "0", 
+            ease: "power1.inOut", 
+            onComplete: function() {
+                gsap.to(document.querySelectorAll('.contact_ct'), {
+                    opacity: 1,
+                    duration: .5,
+                    ease: "power1.inOut",
+                    stagger: .1,
+                })
+            }
+            });
+        }, 200);
+    
+    }
+
+
 
     return (
         <nav className="navbar_wrapper">
-            <h2 className="navbar_title">Erwan Cloux</h2>
+            <Magnetic>
+                <h2 className="navbar_title" onClick={() => gotoHome()} >Erwan Cloux</h2>
+            </Magnetic>
             <ul className="navbar_container">
                 {links.map((link, index) => (
-                    <Magnetic>
-                        <li key={index} onMouseEnter={() => fillNavLinks(index)} onMouseLeave={() => resetNavLinks(index)} ><a className={`navbar_link_${index}`} style={{scale: 2}} href={link.url}>{link.name.split('').map((letter, index) => <span className={`letter`} key={index}>{letter}</span>)}</a></li>
+                    <Magnetic key={index}>
+                        <li onMouseEnter={() => fillNavLinks(index)} onMouseLeave={() => resetNavLinks(index)} onClick={link.action} ><a className={`navbar_link_${index}`} style={{scale: 2}} href={link.url}>{link.name.split('').map((letter, index) => <span className={`letter`} key={index}>{letter}</span>)}</a></li>
                     </Magnetic>
                     ))}
                 <Magnetic>
@@ -100,7 +180,7 @@ export default function Navbar() {
                 </button>
                 <ul className="navbar_mobile_list">
                     {links.map((link, index) => (
-                        <li key={index}><a href={link.url}>{link.name.split('').map((letter, index) => <span key={index}>{letter}</span>)}</a></li>
+                        <li key={index} onClick={link.action}><a href={link.url}>{link.name.split('').map((letter, index) => <span key={index}>{letter}</span>)}</a></li>
                     ))}
                     <li className="navbar_contact"><a href="https://github.com/erwanclx" target="_blank"><img src="/src/assets/github.png"/></a></li>
                 </ul>

@@ -23,3 +23,9 @@ footer p a {
 footer p a:hover {
     color: var(--secondary);
 }
+
+@media screen and (max-width: 816px) {
+    footer {
+        height: 10%;
+    }    
+}

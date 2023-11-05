@@ -31,9 +31,6 @@ export default function Cursor() {
             height: '90px',
             top: -1 * 90 / 2,
             left: -1 * 90 / 2,
-
-            // top: calc(-1 * var(--cursor-size) / 2);
-            // left: calc(-1 * var(--cursor-size) / 2);
             duration: 0.3,
           });
       };
@@ -73,6 +70,7 @@ export default function Cursor() {
   
       window.addEventListener('mousemove', onMouseMove);
       const links = document.querySelectorAll('a');
+      const nav_title = document.querySelector('.navbar_title');
       const hero_button = document.querySelector('.hero_button');
       const contact_submit = document.querySelector('.contact-submit');
 
@@ -81,6 +79,9 @@ export default function Cursor() {
         document.querySelector('.navbar_contact'),
         document.querySelector('.section-projects-button.ext'),
       ]
+
+      nav_title?.addEventListener('mouseenter', onLinkHover);
+      nav_title?.addEventListener('mouseleave', onLinkLeave);
   
       links.forEach((link) => {
         link.addEventListener('mouseenter', onLinkHover);
@@ -106,6 +107,10 @@ export default function Cursor() {
       });
       hero_button?.removeEventListener('mouseenter', onLinkHover);
       hero_button?.removeEventListener('mouseleave', onLinkLeave);
+
+      nav_title?.removeEventListener('mouseenter', onLinkHover);
+      nav_title?.removeEventListener('mouseleave', onLinkLeave);
+
       contact_submit?.removeEventListener('mouseenter', onLinkHover);
       contact_submit?.removeEventListener('mouseleave', onLinkLeave);
 

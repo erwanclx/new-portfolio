@@ -5,6 +5,8 @@ import { Stats, OrbitControls, Circle } from '@react-three/drei'
 import { useLoader } from '@react-three/fiber'
 
 export default function HeroScene() {
+
+    
     return (
         <Canvas camera={{fov: 20,
         }}>

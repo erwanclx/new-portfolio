@@ -102,6 +102,26 @@
     transition: transform 0.5s ease-in-out;
 }
 
+@media screen and (max-width: 1650px) {
+    .hero_title {
+        font-size: 10rem;
+    }
+
+    .hero_title_bottom_context {
+        font-size: 5rem;
+    } 
+}
+
+@media screen and (max-width: 1440px) {
+    .hero_title {
+        font-size: 8rem;
+    }
+
+    .hero_title_bottom_context {
+        font-size: 4rem;
+    } 
+}
+
 
 @media screen and (max-width: 1024px) {
     .hero_title {
@@ -113,7 +133,7 @@
     } 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 820px) {
     .hero_title {
         font-size: 3rem;
     }
@@ -131,9 +151,9 @@
     
     
     .hero_button {
-        height: 50px;
-        width: 200px;
-        font-size: 1.5rem;
+        height: 70px;
+        width: 220px;
+        font-size: 1.8rem;
     }
 
     .hero_container {

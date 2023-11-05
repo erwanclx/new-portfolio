@@ -12,8 +12,6 @@ export default function HeroSec() {
 
     const [isInProjects, setIsInProjects] = useState(false);
 
-    const cta = CSSRulePlugin.getRule(".hero_title_top_letter:nth-child(3)::before");
-
     React.useEffect(() => {
     gsap.to('.hero_title_top_letter', {
         y: 0,
@@ -80,6 +78,14 @@ export default function HeroSec() {
             borderTopLeftRadius: "0", 
         borderTopRightRadius: "0", 
         ease: "power1.inOut", 
+        onComplete: function() {
+            gsap.to(document.querySelectorAll('.contact_ct'), {
+                opacity: 1,
+                duration: .5,
+                ease: "power1.inOut",
+                stagger: .1,
+            })
+        }
         });
     
     }
@@ -108,7 +114,7 @@ export default function HeroSec() {
                     </div>
                     
                     <div className="title-2">
-                    <a href='https://flowline.com' target='_blank' className='hero_title_bottom_context'>
+                    <a href='https://www.flowlinetechnologies.com/' target='_blank' className='hero_title_bottom_context'>
                         Apprentice
                     </a>
                     {

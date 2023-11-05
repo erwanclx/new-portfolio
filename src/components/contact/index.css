@@ -1,7 +1,7 @@
 .section-contact {
     height: 100vh;
     width: 100vw;
-    max-width: 1650px;
+    max-width: var(--max-width);
     background-color: var(--background);
 
     position: absolute;
@@ -10,7 +10,7 @@
     
     transform: translate(-50%,100%);
 
-    border-radius: 70% 70% 0 0;
+    border-radius: var(--section-radius);
 }
 
 .section-title.contact {
@@ -95,4 +95,42 @@ form label::after {
     color: var(--background);
     background-color: var(--secondary);
     border: 1px solid var(--secondary);
+}
+
+.contact_ct {
+    opacity: 0;
+}
+
+@media screen and (max-width: 816px) {
+    
+    .section-contact-content {
+        display: flex;
+        flex-direction: column;
+        height: 65%;
+        gap: 0px;
+    }
+    .contact-submit {
+        height: 70px;
+        width: 220px;
+        font-size: 1.8rem;
+    }
+
+    form input, form textarea {
+        height: 20px;
+        font-size: 1rem;
+    }
+
+    form label {
+        margin-bottom: -20px;
+    }
+    .right {
+        height: 100%;
+    }
+    .section-title {
+        margin-top: 10px;
+    }
+    .section-subtitle.contact {
+        opacity: 0 !important;
+        line-height: 2;
+    }
 }
