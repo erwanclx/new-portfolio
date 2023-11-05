@@ -7,6 +7,7 @@ import './navbar.css';
 
 export default function Navbar() {
     const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
+    const [isInContact, setIsInContact] = useState(false);
 
     const links = [
         {
@@ -112,6 +113,25 @@ export default function Navbar() {
     }
 
     function gotoProjects() {
+        if(isInContact) {
+             
+            gsap.to(document.querySelectorAll('.contact_ct'), {
+                opacity: 0,
+                duration: .5,
+                ease: "power1.inOut",
+                stagger: .1,
+                onComplete: function() {
+                    gsap.to(document.querySelector('.section-contact'), {
+                        y: '100%',
+                        duration: 1,
+                        borderTopLeftRadius: "70%", 
+                        borderTopRightRadius: "70%",
+                    ease: "power1.inOut",
+                })
+            }
+            });
+            setIsInContact(false);
+        }
         gsap.to(document.querySelector('.section-projects'), {
             y: '15%',
             duration: 1,
@@ -131,6 +151,7 @@ export default function Navbar() {
 
     function gotoContact() {
         gotoProjects();
+        setIsInContact(true);
         setTimeout(() => {
             gsap.to(document.querySelector('.section-contact'), {
                 y: '15%',
