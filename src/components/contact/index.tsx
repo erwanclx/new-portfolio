@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import './index.css';
+import Magnetic from '../../animations/magnetic';
+import Footer from '../footer/footer';
 
 export default function ContactSection() {
     const [state, handleSubmit] = useForm("mqkvjlyd");
     if (state.succeeded) {
-        return <p>Thanks for your message, i will read it soon !</p>;
+         alert('Thanks for your message !')
+         window.location = '/'
     }
     return (
         <div className='section-contact'>
@@ -41,21 +44,21 @@ export default function ContactSection() {
                       field="message"
                       errors={state.errors}
                     />
-                    <button type="submit" className='contact-submit' disabled={state.submitting}>
-                      Submit
-                    </button>
+                    <Magnetic>
+                      <button type="submit" className='contact-submit' disabled={state.submitting}>
+                        Submit
+                      </button>
+                    </Magnetic>
                 </form>
             </div>
             <div className='right'>
-                <h3>Address</h3>
+                {/* <h3>Address</h3>
                 <p>1234 Main St</p>
-                <p>City, State 12345</p>
+                <p>City, State 12345</p> */}
             </div>
         </div>
-        <footer>
-            <p>Copyright 2023 Tout Droit Réservé par Erwan Cloux. Lire les mentions légales</p>
-        </footer>
 
+        <Footer />
         
 
         </div>

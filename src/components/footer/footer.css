@@ -1,0 +1,25 @@
+
+footer {
+    /* background-color: var(--secondary); */
+    border-top: 1px solid var(--secondary);
+    height: 20%;
+    padding: 20px;
+}
+
+footer p {
+    color: var(--disabled);
+    font-size: 1.2rem;
+    font-family: var(--font-body);
+    width: 100%;
+    text-align: center;
+}
+
+footer p a {
+    color: var(--disabled);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer p a:hover {
+    color: var(--secondary);
+}

@@ -32,6 +32,14 @@ body {
 
 }
 
+::selection {
+	background-color: var(--primary)
+}
+
+::moz-selection {
+	background-color: var(--primary)
+}
+
 #root {
   max-width: 1650px;
   margin: 0 auto;

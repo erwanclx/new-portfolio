@@ -19,7 +19,7 @@
 }
 
 .section-contact-content {
-    height: 70%;
+    height: 60%;
 
     display: grid;
     grid-template-columns: 40% 60%;
@@ -34,7 +34,7 @@
 
 form {
     display: flex;
-    height: 80%;
+    height: 100%;
     flex-direction: column;
     justify-content: center;
     gap: 30px;
@@ -45,6 +45,18 @@ form input, form textarea {
     border: none;
     border-bottom: 1px solid var(--secondary);
     background-color: transparent;
+    color: var(--secondary);
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-bottom: 1px solid var(--primary);
 }
 
 form label {
@@ -63,10 +75,24 @@ form label::after {
 }
 
 .contact-submit {
-    
+    margin: 0 auto;
+    height: 100px;
+    width: 400px;
+    border-radius: 50px;
+    border: 1px solid var(--secondary);
+    background: transparent;
+
+    font-size: 3rem;
+
+    font-family: var(--font-title);
+    color: var(--secondary);
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 10px;
 }
 
-footer {
-    background-color: red;
-    height: 30%;
+.contact-submit:hover {
+    color: var(--background);
+    background-color: var(--secondary);
+    border: 1px solid var(--secondary);
 }

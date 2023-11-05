@@ -74,6 +74,7 @@ export default function Cursor() {
       window.addEventListener('mousemove', onMouseMove);
       const links = document.querySelectorAll('a');
       const hero_button = document.querySelector('.hero_button');
+      const contact_submit = document.querySelector('.contact-submit');
 
       const external_links = [
         document.querySelector('.hero_title_bottom_context'),
@@ -85,6 +86,9 @@ export default function Cursor() {
         link.addEventListener('mouseenter', onLinkHover);
         link.addEventListener('mouseleave', onLinkLeave);
       });
+
+      contact_submit?.addEventListener('mouseenter', onLinkHover);
+      contact_submit?.addEventListener('mouseleave', onLinkLeave);
 
      external_links.forEach((link) => {
         link?.addEventListener('mouseenter', onExtHover);
@@ -102,6 +106,8 @@ export default function Cursor() {
       });
       hero_button?.removeEventListener('mouseenter', onLinkHover);
       hero_button?.removeEventListener('mouseleave', onLinkLeave);
+      contact_submit?.removeEventListener('mouseenter', onLinkHover);
+      contact_submit?.removeEventListener('mouseleave', onLinkLeave);
 
       external_links.forEach((link) => {
         link?.removeEventListener('mouseenter', onExtHover);
