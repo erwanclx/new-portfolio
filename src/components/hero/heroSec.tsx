@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import gsap from 'gsap';
-import CSSRulePlugin from 'gsap/CSSRulePlugin';
 import './heroSec.css';
 import Magnetic from '../../animations/magnetic';
-import { Preload } from '@react-three/drei';
 
 const heroTitleBottom = 'Developer';
 const heroTitleTop = 'Sysadmin';
@@ -12,27 +10,33 @@ export default function HeroSec() {
 
     const [isInProjects, setIsInProjects] = useState(false);
 
+    const timeset = 1.2;
+
     React.useEffect(() => {
-    gsap.to('.hero_title_top_letter', {
-        y: 0,
-        stagger: 0.05,
-        delay: 0.2,
-        duration: .1,
-    })
-    gsap.to('.hero_title_bottom_letter', {
-        y: 0,
-        stagger: 0.05,
-        delay: 0.2,
-        duration: .05,
-        onComplete: function() {
-            gsap.to('.hero_title_bottom_context', {
-                x: 0,
-                stagger: 0.05,
-                delay: 0.4,
-                duration: .05,
-            })
-        }
-    })
+      
+    setTimeout(() => {
+        gsap.to('.hero_title_top_letter', {
+            y: 0,
+            stagger: 0.05,
+            delay: 0.2,
+            duration: .1,
+        })
+        gsap.to('.hero_title_bottom_letter', {
+            y: 0,
+            stagger: 0.05,
+            delay: 0.2,
+            duration: .05,
+            onComplete: function() {
+                gsap.to('.hero_title_bottom_context', {
+                    x: 0,
+                    stagger: 0.05,
+                    delay: 0.4,
+                    duration: .05,
+                })
+            }
+        })
+    }
+    , timeset * 1000);
 
     const section_projects = document.querySelector('.section-projects');
     const section_projects_content = document.querySelectorAll('.pj_ct');

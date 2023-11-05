@@ -11,15 +11,21 @@ export default function Preload() {
     const preload = useRef(null);
 
     React.useEffect(() => {
-        gsap.to(preload.current, {
-            width: '0vw',
-            ease: 'power1.inOut',
-            duration: timeset,
-            onComplete: function() {
-                setIsLoaded(true);
-            }
-        })
+        setTimeout(() => {
+            gsap.to(preload.current, {
+                // width: '0vw',
+                x: '-100vw',
+                ease: 'power1.inOut',
+                duration: timeset,
+                onComplete: function() {
+                    setIsLoaded(true);
+                }
+            })
+        }
+        , timeset * 1000);
     }, [])
 
-    return <div ref={preload} id='preload'></div>
+    return <div ref={preload} id='preload'>
+        <p className='preload_text'>Welcome !</p>
+    </div>
 }
