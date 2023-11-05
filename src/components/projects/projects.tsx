@@ -12,7 +12,7 @@ export const projects = [
         title: 'VMBoost',
         status: 'In Progress',
         for: 'Personal',
-        image: 'src/components/projects/vmboost.png',
+        image: '/vmboost.png',
         description: 'VMBoost is a web application that allows users to create, manage, and deploy virtual machines on the cloud.',
         stack: ['React', 'TypeScript', 'Rust', 'Vagrant'],
         url: "https://github.com/erwanclx/vmboost-tauri"
@@ -22,7 +22,7 @@ export const projects = [
         title: 'IT-Discover',
         status: 'In Progress',
         for: 'Personal',
-        image: 'src/components/projects/itdiscover.png',
+        image: '/itdiscover.png',
         description: 'IT-Discover is a blog that aims to share my knowledge and experience in the IT field, on development, devops, security, and more.',
         stack: ['React', 'TypeScript', 'NextJS'],
     },
@@ -31,7 +31,7 @@ export const projects = [
         title: 'Dreaming Places',
         status: 'In Progress',
         for: 'Business',
-        image: 'src/components/projects/dreamingplaces.png',
+        image: '/dreamingplaces.png',
         description: 'Dreaming Places is a travel agency that offers luxury villas to dream destinations.',
         stack: ['Wordpress', 'PHP']
     }

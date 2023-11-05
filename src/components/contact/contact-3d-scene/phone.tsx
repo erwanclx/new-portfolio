@@ -10,7 +10,7 @@ export const networks = [
         id: 1,
         name: 'Github',
         url: 'https://github.com/erwanclx',
-        icon: 'src/components/contact/contact-3d-scene/assets/github.png',
+        icon: '/github.png',
         color: '#0e100f',
         position: [0,0.4,0]
     },
@@ -18,7 +18,7 @@ export const networks = [
         id: 2,
         name: 'LinkedIn',
         url: 'https://www.linkedin.com/in/erwan-clx/',
-        icon: 'src/components/contact/contact-3d-scene/assets/linkedin.png',
+        icon: '/linkedin.png',
         color: '#126bc4',
         position: [0,0,0]
     },
@@ -26,7 +26,7 @@ export const networks = [
         id: 3,
         name: 'Mail',
         url: 'mailto:hi@erwancloux.fr',
-        icon: 'src/components/contact/contact-3d-scene/assets/mail.png',
+        icon: '/mail.png',
         color: '#ffffff',
         position: [0,-0.4,0]
     },
@@ -76,7 +76,7 @@ const App = (props) => {
 
 export default function Phone() {
     const group = useRef()
-    const { nodes, materials } = useGLTF('/src/assets/Phonetest.glb')
+    const { nodes, materials } = useGLTF('/Phonetest.glb')
 
     const nodetoedit = nodes['group817659832'].children[2]
 

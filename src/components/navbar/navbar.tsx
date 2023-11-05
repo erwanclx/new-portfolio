@@ -163,7 +163,7 @@ export default function Navbar() {
                     </Magnetic>
                     ))}
                 <Magnetic>
-                    <li className="navbar_contact"><a href="https://github.com/erwanclx" target="_blank"><img src="/src/assets/github.png"/></a></li>
+                    <li className="navbar_contact"><a href="https://github.com/erwanclx" target="_blank"><img src="/github.png"/></a></li>
                 </Magnetic>
             </ul>
 
@@ -182,7 +182,7 @@ export default function Navbar() {
                     {links.map((link, index) => (
                         <li key={index} onClick={link.action}><a href={link.url}>{link.name.split('').map((letter, index) => <span key={index}>{letter}</span>)}</a></li>
                     ))}
-                    <li className="navbar_contact"><a href="https://github.com/erwanclx" target="_blank"><img src="/src/assets/github.png"/></a></li>
+                    <li className="navbar_contact"><a href="https://github.com/erwanclx" target="_blank"><img src="/github.png"/></a></li>
                 </ul>
             </div>
 

@@ -25,7 +25,7 @@ html, body, * {
 
 .custom-cursor.link::before {
     content: '';
-    background-image: url('/src/assets/arrow.svg');
+    background-image: url('/arrow.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
