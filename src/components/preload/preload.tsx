@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import React, {useRef, useState, useEffect} from 'react'
 import './preload.css'
 import gsap from 'gsap'
 
@@ -10,10 +10,9 @@ export default function Preload() {
 
     const preload = useRef(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
         setTimeout(() => {
             gsap.to(preload.current, {
-                // width: '0vw',
                 x: '-100vw',
                 ease: 'power1.inOut',
                 duration: timeset,
@@ -25,7 +24,9 @@ export default function Preload() {
         , timeset * 1000);
     }, [])
 
-    return <div ref={preload} id='preload'>
-        <p className='preload_text'>Welcome !</p>
-    </div>
+    return (
+        <div ref={preload} id='preload'>
+            <p className='preload_text'>Welcome !</p>
+        </div>
+    ) 
 }

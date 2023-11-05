@@ -55,23 +55,25 @@ export default function Navbar() {
         });
     }
 
-    
+    const timeset = 1.2;
 
     useEffect(() => {
-        gsap.fromTo(
-            document.querySelectorAll('.letter'),
-            { 
-              y: 100,
-              opacity: 0
-            },
-            {
-              y: 0,
-              opacity: 1,
-              stagger: 0.05,
-              duration: 2,
-              ease: 'power4.out',
-            }
-          );
+        setTimeout(() => {
+            gsap.fromTo(
+                document.querySelectorAll('.letter'),
+                { 
+                  y: 100,
+                  opacity: 0
+                },
+                {
+                  y: 0,
+                  opacity: 1,
+                  stagger: 0.05,
+                  duration: 2,
+                  ease: 'power4.out',
+                }
+              );
+        }, timeset * 1000);
           
     }, []);
 
